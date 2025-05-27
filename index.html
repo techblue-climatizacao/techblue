@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento - Techblue Climatização</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Techblue Climatização</h1>
+        <h2>Orçamento</h2>
+
+        <!-- Dados da Empresa -->
+        <div class="dados-empresa">
+            <h3>Dados da Empresa</h3>
+            <p><strong>Razão Social:</strong> Techblue Climatização LTDA</p>
+            <p><strong>CNPJ:</strong> 47.126.600/0001-64</p>
+        </div>
+
+        <!-- Dados do Cliente -->
+        <div class="dados-cliente">
+            <h3>Dados do Cliente</h3>
+            <label>Nome:</label>
+            <input type="text" id="nomeCliente">
+
+            <label>Telefone:</label>
+            <input type="text" id="telefoneCliente" placeholder="(00) 00000-0000">
+
+            <label>Endereço da Instalação:</label>
+            <input type="text" id="enderecoCliente">
+        </div>
+
+        <!-- Itens do Orçamento -->
+        <div class="itens">
+            <h3>Itens</h3>
+            <table id="tabelaItens">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Quantidade</th>
+                        <th>Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="descricao"></td>
+                        <td><input type="number" class="quantidade" value="1"></td>
+                        <td><input type="number" class="valor" step="0.01" value="0.00"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="adicionarItem()">+ Adicionar Item</button>
+        </div>
+
+        <!-- Totais e Observações -->
+        <div class="totais">
+            <label>Subtotal (R$):</label>
+            <input type="text" id="subtotal" readonly>
+
+            <label>Observações:</label>
+            <textarea id="observacoes"></textarea>
+
+            <label>Validade do Orçamento:</label>
+            <input type="text" id="validade" placeholder="Ex: 7 dias">
+        </div>
+
+        <!-- Botão de Gerar PDF -->
+        <button onclick="gerarPDF()">Gerar PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
